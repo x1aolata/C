@@ -1,0 +1,276 @@
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <conio.h>
+
+#include <windows.h>
+
+#include <time.h>
+
+
+
+#define High 20//地图的尺寸
+
+#define Width 30
+
+#define SerpentNum 200//蛇长的最大值
+
+
+
+//全局变量
+
+int serpent_x[SerpentNum],serpent_y[SerpentNum];//蛇的坐标
+
+int serpent_long; //蛇的长度
+
+int canvas[High][Width]={0};//地图对应元素 0空格 1蛇 2食物 3围墙  4蛇头
+
+int food_x,food_y;//食物的坐标
+
+int score; //分数
+
+char input;//方向的控制
+
+
+
+void gotoxy(int x,int y)
+
+{
+
+	HANDLE handle=GetStdHandle(STD_OUTPUT_HANDLE);
+
+	COORD pos;
+
+	pos.X=x;
+
+	pos.Y=y;
+
+	SetConsoleCursorPosition(handle,pos);
+
+}
+
+
+
+void startup()
+
+{
+
+	serpent_x[0]=High/2;serpent_y[0]=Width/3;//蛇的初始位置
+
+	serpent_x[1]=High/2;serpent_y[1]=Width/3+1;
+
+	serpent_long=2;
+
+	food_x=High/3;food_y=Width/3;//食物
+
+	score=0;
+
+
+
+	int i,j;
+
+	canvas[serpent_x[0]][serpent_y[0]]=4;
+
+	canvas[serpent_x[1]][serpent_y[1]]=1;
+
+	canvas[food_x][food_y]=2;
+
+	for(i=0;i<High;i++)
+
+		for(j=0;j<Width;j++)
+
+			if(i==0||j==0||i==High-1||j==Width-1)
+
+				canvas[i][j]=3;
+
+}
+
+
+
+void show()//画面打印
+
+{
+
+	gotoxy(0,0);
+
+	int i,j;
+
+	for(i=0;i<High;i++)
+
+	{
+
+		for(j=0;j<Width;j++)
+
+		{
+
+			if(canvas[i][j]==0)
+
+				printf(" ");
+
+			else if(canvas[i][j]==1)
+
+				printf("+");
+
+			else if(canvas[i][j]==2)
+
+				printf("@");
+
+			else if(canvas[i][j]==3)
+
+				printf("*");
+
+			else if(canvas[i][j]==4)
+
+				printf("O");
+
+		}
+
+		printf("\n");
+
+	}
+
+	printf("得分；%d",score);
+
+}
+
+
+
+void updateWithoutInput()//与输入无关的更新
+
+{
+
+    int i;
+
+    if(serpent_x[0]==food_x&&serpent_y[0]==food_y)//如果蛇吃到果子
+
+    {
+
+        score++;
+
+
+
+        srand((unsigned)time(NULL));//食物刷新
+
+        food_x=rand()%(High-3)+1;
+
+        food_y=rand()%(Width-3)+1;
+
+        canvas[food_x][food_y]=2;
+
+
+
+        serpent_long++;//蛇的增长
+
+    }
+
+    if((serpent_x[0]==0||serpent_y[0]==0||serpent_x[0]==High-1||serpent_y[0]==Width-1))
+
+    {
+
+        printf("死亡游戏结束！\n");//撞墙死亡
+
+        getch();
+
+        exit(1);
+
+    }
+
+    for(i=1;i<serpent_long;i++)
+
+        if(serpent_x[0]==serpent_x[i]&&serpent_y[0]==serpent_y[i])
+
+        {
+
+            printf("死亡游戏结束！\n");//碰到自己身子死亡
+
+            getch();
+
+            exit(1);
+
+        }
+
+}
+
+
+
+void updateWithInput()//与输入有关的更新
+
+{
+
+	int i=1;
+
+	if(kbhit())
+
+		input=getch();
+
+	if(input=='w'||input=='s'||input=='a'||input=='d')
+
+	{
+
+		canvas[serpent_x[serpent_long-1]][serpent_y[serpent_long-1]]=0;
+
+		for(i=serpent_long-1;i>0;i--)
+
+		{
+
+			serpent_x[i]=serpent_x[i-1];
+
+			serpent_y[i]=serpent_y[i-1];
+
+			canvas[serpent_x[i]][serpent_y[i]]=1;
+
+		}
+
+	}
+
+
+
+	if(input=='w')
+
+		serpent_x[0]--;
+
+	else if(input=='s')
+
+		serpent_x[0]++;
+
+	else if(input=='a')
+
+		serpent_y[0]--;
+
+	else if(input=='d')
+
+		serpent_y[0]++;
+
+
+
+	canvas[serpent_x[0]][serpent_y[0]]=4;
+
+
+
+}
+
+
+
+int main(void)
+
+{
+
+	startup();
+
+	while(1)
+
+	{
+
+		show();
+
+		updateWithoutInput();
+
+		updateWithInput();
+
+	}
+
+	return 0;
+
+}
