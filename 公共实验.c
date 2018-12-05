@@ -4,33 +4,21 @@
 #include <string.h>
 #include <math.h>
 
-int copy(int a, int n)
-{
-	double i;
-	int sum=0;
-	for (i = 0; i < n; i++)
-	{
-		sum += a * pow(10, i);
 
-	}
-return sum;
-}
+
+
 
 int main()
 {
-	int a, n, S = 0;
-	int i, j;
-	scanf("%d %d", &a, &n);
 
+    char *name1="hello world";
+    char name2[20]="hello";
+    printf("%p\n",*name1);
+    //fgets(name,sizeof(name),stdin);
+    // strcat(name1,name2);
+    // printf("%d",strlen(name1));
+    name1+=3;
+    puts(name1);
 
-for (i=1;i<n+1;i++)
-	{
-		S += copy(a, i);
-
-
-	}
-	printf("%d", S);
-
-
-	return 0;
+    return 0;
 }
