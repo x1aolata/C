@@ -5,20 +5,11 @@
 #include <math.h>
 
 
-
-
-
 int main()
 {
+    system("color 1E");
 
-    char *name1="hello world";
-    char name2[20]="hello";
-    printf("%p\n",*name1);
-    //fgets(name,sizeof(name),stdin);
-    // strcat(name1,name2);
-    // printf("%d",strlen(name1));
-    name1+=3;
-    puts(name1);
+    puts("sdasd");
 
     return 0;
 }
