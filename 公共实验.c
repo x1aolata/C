@@ -7,7 +7,7 @@
 
 int main()
 {
-    system("color 1E");
+    system("color 02");
 
     puts("sdasd");
 
