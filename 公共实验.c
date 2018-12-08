@@ -5,11 +5,15 @@
 #include <math.h>
 
 
+
 int main()
 {
     system("color 02");
 
-    puts("sdasd");
+
+
+    puts("wwasdw");
+
 
     return 0;
 }
