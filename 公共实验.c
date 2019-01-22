@@ -4,13 +4,17 @@
 #include <string.h>
 #include <math.h>
 
-void sort(int *a, int left, int right);
+
 
 int main()
 {
     system("color 02");
     puts("wwasdw");
-    int a[5];
+
+
+}
+void sort(int *a, int left, int right);
+ int a[5];
     int i;
     for(i=0; i<5; i++)
     {
@@ -22,8 +26,6 @@ int main()
         printf("%d",a[i]);
     }
     return 0;
-}
-
 void sort(int *a, int left, int right)
 {
     if(left >= right)/*如果左边索引大于或者等于右边的索引就代表已经整理完成一个组了*/
