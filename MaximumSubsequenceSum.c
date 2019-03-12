@@ -32,8 +32,8 @@ int main()
             boolean=1;
         }
     }
-printf("%d %d\n",start,end);
-printf("%d %d %d",Maxsum,num[start],num[end]);
+    printf("%d %d\n",start,end);
+    printf("%d %d %d",Maxsum,num[start],num[end]);
 }
 
 
