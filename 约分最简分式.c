@@ -1,21 +1,13 @@
-#include<stdio.h>
-main()
+#include "stdio.h"
+void main()
 {
-    int a,b,i,j;
-    scanf("%d/%d",&a,&b);
-    for(i=1; i<90; i++)
+    int a[10],i,sum=0;
+    for(i=0; i<=9; i++)
     {
-        for(j=2; j<100; j++)
-        {
-            if(a%j==0&&b%j==0)
-            {
-                a=a/j;
-                b=b/j;
-            }
-        }
+         printf("Enter the No.%d=",i+1);
+        scanf("%d",&a[i]);
     }
-    printf("%d/%d",a,b);
+    for(i=0; i<=9; i++)
+        sum=sum+a[i];
+    printf("Total=%d\n",sum);
 }
-
-
-

@@ -1,9 +1,12 @@
 #include<stdio.h>
-main()
+int main()
 {
     int i;
-    for (i=0;i<=9;++i)
+    int n;
+     printf("è¯·è¾“å…¥ï¼š");
+    scanf("%d",&n);
+    for (i=0;i<=n;++i)
     {
-        printf("ÄãºÃ°¡£¬½¯Èô»Ô\n");
+        printf("hello world\n");
     }
 }

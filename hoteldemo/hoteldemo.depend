@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1543840318 source:e:\c语言程序设计\codeblocks\hoteldemo\main.c
+1543840620 source:e:\c语言程序设计\codeblocks\hoteldemo\main.c
 	<stdio.h>
 	<stdlib.h>
 	"hotal.h"

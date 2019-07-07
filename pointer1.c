@@ -11,8 +11,8 @@ int main()
     printf("&b=%p\n",&b);
     printf("&c=%p\n",&c);
     printf("&d=%p\n",&d);
-
-    printf("a=%d\n",  *((char  *)0x0060FEAF));
+    //将此处改为上述地址
+    printf("a=%d\n",  *((char  *)0x0060FEFF));
     printf("b=%d\n",  *((short *)0x0060FEAC));
     printf("c=%d\n",  *((int   *)0x0060FEA8));
     printf("d=%.2f\n",*((double*)0x0060FEA0));

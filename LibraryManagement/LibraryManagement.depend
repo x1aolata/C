@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1560738470 source:e:\c语言程序设计\codeblocks\librarymanagement\book.c
+	<stdio.h>
+	<string.h>
+	"book.h"
+
+1560582655 e:\c语言程序设计\codeblocks\librarymanagement\book.h
+
+1560741979 source:e:\c语言程序设计\codeblocks\librarymanagement\main.c
+	<stdio.h>
+	<stdlib.h>
+	"book.h"
+	"fileop.h"
+	"menu.h"
+	"student.h"
+
+1560586690 source:e:\c语言程序设计\codeblocks\librarymanagement\fileop.c
+	<stdio.h>
+	"fileop.h"
+	"book.h"
+
+1559905565 e:\c语言程序设计\codeblocks\librarymanagement\fileop.h
+	"book.h"
+
+1560737654 source:e:\c语言程序设计\codeblocks\librarymanagement\menu.c
+	<stdio.h>
+	<windows.h>
+
+1560080282 e:\c语言程序设计\codeblocks\librarymanagement\menu.h
+
+1560586690 source:e:\c语言程序设计\codeblocks\librarymanagement\student.c
+	<stdio.h>
+	<string.h>
+	"book.h"
+	"student.h"
+
+1560741978 e:\c语言程序设计\codeblocks\librarymanagement\student.h
+

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1558519873 source:e:\c语言程序设计\codeblocks\libraryinformationmanagementsystem\main.c
+	<stdio.h>
+	<stdlib.h>
+	"x1aolata.h"
+
+1558519778 e:\c语言程序设计\codeblocks\libraryinformationmanagementsystem\include\x1aolata.h
+
+1558519912 source:e:\c语言程序设计\codeblocks\libraryinformationmanagementsystem\src\x1aolata.cpp
+	<stdio.h>
+	"x1aolata.h"
+
